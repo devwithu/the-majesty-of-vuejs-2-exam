@@ -12,14 +12,13 @@
   </template>
 
   <script>
+  import Famous from './Famous.vue'
   export default {
-    props: ['stories'],
-    computed: {
-      famous () {
-        return this.stories.filter(function (item) {
-          return item.upvotes > 50
-        })
-      }
-    }    
+    components: {
+      Famous
+    },
+    created () {
+      console.log('register')
+    }
   }
   </script>

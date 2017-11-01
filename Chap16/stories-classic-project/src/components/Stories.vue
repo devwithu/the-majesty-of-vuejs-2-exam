@@ -8,8 +8,15 @@
 </template>
 
 <script>
+  import {store} from '../store.js'
+
   export default {
-    props: ['stories']
+    data () {
+      return {
+        // Bind directly to stories
+        stories: store.stories
+      }
+    }
 
   }
 </script>

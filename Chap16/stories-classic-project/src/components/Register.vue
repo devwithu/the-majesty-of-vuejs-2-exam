@@ -7,18 +7,19 @@
     <input placeholder="Pick a password" class="form-control">
     <input placeholder="Confirm password" class="form-control">
     <button class="btn">Sign up</button>
-    <famous/>
+    <famous :stories="stories" />
   </div>
   </template>
 
   <script>
-  import Famous from './Famous.vue'
   export default {
-    components: {
-      Famous
-    },
-    created () {
-      console.log('register')
-    }
+    props: ['stories'],
+    computed: {
+      famous () {
+        return this.stories.filter(function (item) {
+          return item.upvotes > 50
+        })
+      }
+    }    
   }
   </script>
